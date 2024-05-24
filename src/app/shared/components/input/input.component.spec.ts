@@ -43,10 +43,12 @@ describe('InputComponent', () => {
   });
 
   it('should display the error message when isError is true', () => {
+    const errorMsg = 'Please check the URL';
     fixture.componentRef.setInput('isError', true);
+    fixture.componentRef.setInput('errorMessage', errorMsg);
     fixture.detectChanges();
     const errorMessageElement =
       fixture.nativeElement.querySelector('p.text-danger');
-    expect(errorMessageElement.textContent.trim()).toBe('Please check again');
+    expect(errorMessageElement.textContent.trim()).toBe(errorMsg);
   });
 });
