@@ -25,7 +25,7 @@ import { Icon } from '../../models/icons.model';
         (change)="onChange($event)"
       />
       @if (isError()) {
-        <p class="text-danger text-body-s absolute right-4 top-4 mutha">
+        <p class="text-danger text-body-s absolute right-4 top-4">
           {{ errorMessage() }}
         </p>
       }
