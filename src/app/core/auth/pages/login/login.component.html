@@ -1,0 +1,17 @@
+<app-box className="p-4 sm:p-10 bg-transparent sm:bg-white">
+  <div>
+    <h2 class="heading">Login form</h2>
+    <p>This is a login form..</p>
+    <button class="button-primary">Primary</button>
+    <button class="button-secondary">Secondary</button>
+    <form #form="ngForm">
+      <app-input
+        name="dsa"
+        [(ngModel)]="examplevalue"
+        placeholder="An examle field"
+        [isError]="true"
+      />
+      <!-- <input type="number" name="d" [(ngModel)]="examplevalue" /> -->
+    </form>
+  </div>
+</app-box>

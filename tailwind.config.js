@@ -43,6 +43,9 @@ module.exports = {
           },
         ],
       },
+      boxShadow: {
+        active: "0px 0px 32px rgba(99, 60, 255, 0.25)",
+      },
     },
   },
   plugins: [],

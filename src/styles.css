@@ -9,3 +9,23 @@
     font-family: "Instrument Sans", system-ui, sans-serif;
   }
 }
+
+.button {
+  @apply inline-block text-heading-s py-2.5 px-[5.375rem] rounded-lg disabled:opacity-25;
+}
+
+.button-primary {
+  @apply button text-white bg-primary-60 active:bg-primary-85 active:shadow-active;
+}
+
+.button-secondary {
+  @apply button bg-transparent border border-primary-60 text-primary-60 active:bg-primary-95;
+}
+
+.box {
+  @apply bg-white rounded-xl p-10;
+}
+
+.heading {
+  @apply text-heading-m text-secondary-20;
+}
