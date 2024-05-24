@@ -24,9 +24,11 @@ import { Icon } from '../../models/icons.model';
         [value]="value()"
         (change)="onChange($event)"
       />
-      <p class="text-danger text-body-s absolute right-4 top-4">
+      @if (isError()) {
+      <p class="text-danger text-body-s absolute right-4 top-4 mutha">
         {{ errorMessage() }}
       </p>
+      }
     </div>
   `,
   providers: [
@@ -42,7 +44,7 @@ export class InputComponent implements ControlValueAccessor {
   readonly placeholder = input<string>('');
   readonly icon = input<Icon>('link');
   readonly isError = input<boolean>(false);
-  readonly errorMessage = input<string>('Please check the URL');
+  readonly errorMessage = input<string>('Please check again');
 
   protected readonly value = signal<any>(undefined);
 
