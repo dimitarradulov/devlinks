@@ -1,12 +1,18 @@
 import { NgClass } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  computed,
+  input,
+} from '@angular/core';
+import { twMerge } from 'tailwind-merge';
 
 @Component({
   selector: 'app-box',
   standalone: true,
   imports: [NgClass],
   template: `
-    <article class="bg-white rounded-xl p-10" [ngClass]="className()">
+    <article [ngClass]="cssClasses()">
       <ng-content />
     </article>
   `,
@@ -14,4 +20,8 @@ import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 })
 export class BoxComponent {
   readonly className = input<string>();
+
+  protected readonly cssClasses = computed(() =>
+    twMerge('bg-white rounded-xl p-10', this.className()),
+  );
 }
