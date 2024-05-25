@@ -17,8 +17,8 @@ import { Icon } from '../../models/icons.model';
         height="16"
       />
       <input
-        class="border border-secondary-85 rounded-lg w-full py-3 pl-11 pr-36 outline-none text-secondary-20 placeholder:text-body-m placeholder:text-secondary-20 placeholder:opacity-50 focus:border-primary-60 focus:shadow-active"
-        [ngClass]="{ 'text-danger border-danger': isError() }"
+        class="border border-secondary-85 rounded-lg w-full py-3 pl-11 outline-none text-secondary-20 placeholder:text-body-m placeholder:text-secondary-20 placeholder:opacity-50 focus:border-primary-60 focus:shadow-active"
+        [ngClass]="{ 'text-danger border-danger pr-36': isError() }"
         [type]="type()"
         [placeholder]="placeholder()"
         [value]="value()"

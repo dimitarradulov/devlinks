@@ -1,16 +1,15 @@
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 
-import { BoxComponent } from '../../../../shared/components/box/box.component';
-import { InputComponent } from '../../../../shared/components/input/input.component';
-import { FormsModule } from '@angular/forms';
+import { AuthFormComponent } from '../../components/auth-form/auth-form.component';
+import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, BoxComponent, InputComponent, FormsModule],
+  imports: [CommonModule, AuthFormComponent, LogoComponent],
 })
 export class LoginComponent {
   examplevalue = signal('');
