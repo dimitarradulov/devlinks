@@ -8,6 +8,10 @@
   html {
     font-family: "Instrument Sans", system-ui, sans-serif;
   }
+
+  a {
+    @apply text-primary-60;
+  }
 }
 
 .button {
@@ -28,4 +32,12 @@
 
 .heading {
   @apply text-heading-m text-secondary-20;
+}
+
+.label {
+  @apply text-secondary-20 text-body-s;
+}
+
+.wrapper {
+  @apply max-w-full mx-auto px-4 sm:px-6
 }
