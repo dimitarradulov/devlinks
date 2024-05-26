@@ -27,8 +27,12 @@
           type="email"
           name="email"
           ngModel
+          #email="ngModel"
           placeholder="e.g. alex@email.com"
           icon="email"
+          required
+          email
+          [isError]="!!email.invalid && !!email.touched"
         />
       </div>
 
@@ -40,10 +44,14 @@
           type="password"
           name="password"
           ngModel
+          #password="ngModel"
           placeholder="{{
             type() === 'login' ? 'Enter your password' : 'At least 8 characters'
           }}"
           icon="password"
+          required
+          minlength="8"
+          [isError]="!!password.invalid && !!password.touched"
         />
       </div>
 
@@ -60,7 +68,11 @@
         </div>
       }
 
-      <button type="submit" class="button-primary w-full text-heading-s">
+      <button
+        type="submit"
+        class="button-primary w-full text-heading-s"
+        [disabled]="authForm.invalid"
+      >
         {{ type() === "register" ? "Create new account" : "Login" }}
       </button>
     </form>
