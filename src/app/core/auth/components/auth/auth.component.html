@@ -1,0 +1,79 @@
+<div
+  class="sm:flex sm:flex-col sm:items-center sm:justify-center sm:h-dvh wrapper"
+>
+  <app-logo priority className="pl-4 sm:pl-0 my-8 sm:mt-0 sm:mb-12" />
+  <app-box className="p-4 sm:p-10 bg-transparent sm:bg-white sm:w-[476px]">
+    <div class="mb-10">
+      <h2 class="heading mb-2">
+        {{ type() === "register" ? "Create account" : "Login" }}
+      </h2>
+      <p>
+        {{
+          type() === "register"
+            ? "Let’s get you started sharing your links!"
+            : "Add your details below to get back into the app"
+        }}
+      </p>
+    </div>
+
+    <form
+      #authForm="ngForm"
+      class="space-y-6"
+      (ngSubmit)="onFormSubmit(authForm.value)"
+    >
+      <div>
+        <label class="label" for="email">Email address</label>
+        <app-input
+          type="email"
+          name="email"
+          ngModel
+          placeholder="e.g. alex@email.com"
+          icon="email"
+        />
+      </div>
+
+      <div>
+        <label class="label" for="password">{{
+          type() === "login" ? "Password" : "Create Password"
+        }}</label>
+        <app-input
+          type="password"
+          name="password"
+          ngModel
+          placeholder="{{
+            type() === 'login' ? 'Enter your password' : 'At least 8 characters'
+          }}"
+          icon="password"
+        />
+      </div>
+
+      @if (type() === "register") {
+        <div>
+          <label class="label" for="confirmPassword">Confirm password</label>
+          <app-input
+            type="password"
+            name="createPassword"
+            ngModel
+            placeholder="At least 8 characters"
+            icon="password"
+          />
+        </div>
+      }
+
+      <button type="submit" class="button-primary w-full text-heading-s">
+        {{ type() === "register" ? "Create new account" : "Login" }}
+      </button>
+    </form>
+
+    <div class="text-center mt-6">
+      <p class="sm:inline-block sm:mr-1">
+        {{
+          type() === "login"
+            ? "Don't have an account?"
+            : "Already have an account?"
+        }}
+      </p>
+      <a href="#">{{ type() === "login" ? "Create account" : "Login" }}</a>
+    </div>
+  </app-box>
+</div>
