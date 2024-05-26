@@ -23,10 +23,11 @@ import { Icon } from '../../models/icons.model';
         [placeholder]="placeholder()"
         [value]="value()"
         (change)="onChange($event)"
+        (blur)="onChange($event)"
       />
       @if (isError()) {
         <p class="text-danger text-body-s absolute right-4 top-4">
-          {{ errorMessage() }}
+          {{ errorMessage() ? errorMessage() : 'Please check again' }}
         </p>
       }
     </div>
