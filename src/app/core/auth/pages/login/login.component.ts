@@ -1,20 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { AuthFormComponent } from '../../components/auth-form/auth-form.component';
-import { LogoComponent } from '../../../../shared/components/logo/logo.component';
+import { AuthComponent } from '../../components/auth/auth.component';
+import { AuthCredentials } from '../../models/auth.model';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  templateUrl: './login.component.html',
+  template: ` <app-auth type="register" (onSubmit)="logToConsole($event)" /> `,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CommonModule, AuthFormComponent, LogoComponent],
+  imports: [CommonModule, AuthComponent],
 })
 export class LoginComponent {
-  examplevalue = signal('');
-
-  logToConsole() {
-    console.log('button clicked!');
+  logToConsole(value: AuthCredentials) {
+    console.log(value);
   }
 }
