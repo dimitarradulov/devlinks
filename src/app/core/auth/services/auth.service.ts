@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   private handleError(error: any) {
-    this.state.update((state) => ({ ...state, error }));
+    this.state.update((state) => ({ ...state, error, loading: false }));
     return EMPTY;
   }
 }
