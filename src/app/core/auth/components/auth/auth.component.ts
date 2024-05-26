@@ -22,7 +22,7 @@ export class AuthComponent {
   readonly type = input.required<'login' | 'register'>();
   readonly onSubmit = output<AuthCredentials>();
 
-  protected onFormSubmit(credentials: AuthCredentials) {
+  onFormSubmit(credentials: AuthCredentials) {
     this.onSubmit.emit(credentials);
   }
 }
