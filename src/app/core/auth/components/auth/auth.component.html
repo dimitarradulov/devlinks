@@ -33,6 +33,7 @@
           required
           email
           [isError]="!!email.invalid && !!email.touched"
+          [errorMessage]="email.errors?.['required'] ? 'Can\'t be empty' : ''"
         />
       </div>
 
@@ -45,9 +46,9 @@
           name="password"
           ngModel
           #password="ngModel"
-          placeholder="{{
+          [placeholder]="
             type() === 'login' ? 'Enter your password' : 'At least 8 characters'
-          }}"
+          "
           icon="password"
           required
           minlength="8"
@@ -60,10 +61,15 @@
           <label class="label" for="confirmPassword">Confirm password</label>
           <app-input
             type="password"
-            name="createPassword"
+            name="confirmPassword"
             ngModel
+            #confirmPassword="ngModel"
             placeholder="At least 8 characters"
             icon="password"
+            required
+            minlength="8"
+            [pattern]="password.value"
+            [isError]="!!confirmPassword.invalid && !!confirmPassword.touched"
           />
         </div>
       }
