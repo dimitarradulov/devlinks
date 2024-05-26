@@ -7,7 +7,7 @@ import { AuthCredentials } from '../../models/auth.model';
 @Component({
   selector: 'app-login',
   standalone: true,
-  template: ` <app-auth type="register" (onSubmit)="logToConsole($event)" /> `,
+  template: ` <app-auth type="login" (onSubmit)="logToConsole($event)" /> `,
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CommonModule, AuthComponent],
 })
