@@ -73,7 +73,11 @@
             : "Already have an account?"
         }}
       </p>
-      <a href="#">{{ type() === "login" ? "Create account" : "Login" }}</a>
+      @if (type() === "login") {
+        <a routerLink="../register">Create account</a>
+      } @else {
+        <a routerLink="../login">Login</a>
+      }
     </div>
   </app-box>
 </div>

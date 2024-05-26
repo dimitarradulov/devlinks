@@ -10,11 +10,18 @@ import { BoxComponent } from '../../../../shared/components/box/box.component';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { LogoComponent } from '../../../../shared/components/logo/logo.component';
 import { AuthCredentials } from '../../models/auth.model';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-auth',
   standalone: true,
-  imports: [FormsModule, BoxComponent, InputComponent, LogoComponent],
+  imports: [
+    FormsModule,
+    RouterModule,
+    BoxComponent,
+    InputComponent,
+    LogoComponent,
+  ],
   templateUrl: './auth.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
