@@ -32,7 +32,7 @@ export class AuthService {
   loginAction = new Subject<AuthCredentials>();
 
   private authAction$ = merge(this.registerAction, this.loginAction);
-  private login$ = this.registerAction.pipe(
+  private login$ = this.loginAction.pipe(
     switchMap((credentials) =>
       from(
         signInWithEmailAndPassword(
@@ -43,7 +43,7 @@ export class AuthService {
       ).pipe(catchError(this.handleError.bind(this))),
     ),
   );
-  private register$ = this.loginAction.pipe(
+  private register$ = this.registerAction.pipe(
     switchMap((credentials) =>
       from(
         createUserWithEmailAndPassword(
