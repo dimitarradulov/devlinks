@@ -1,13 +1,17 @@
-import { ApplicationConfig } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter } from '@angular/router';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 
 import { routes } from './app.routes';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 export const appConfig: ApplicationConfig = {
   providers: [
+    provideAnimations(),
+    importProvidersFrom(NgxSpinnerModule.forRoot()),
     provideRouter(routes),
     provideFirebaseApp(() =>
       initializeApp({
@@ -17,7 +21,7 @@ export const appConfig: ApplicationConfig = {
         apiKey: 'AIzaSyDsDDBicoGG9VHorOcg5P6OgmftndmtcdU',
         authDomain: 'devlinks-fe-mentor.firebaseapp.com',
         messagingSenderId: '445522180211',
-      })
+      }),
     ),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

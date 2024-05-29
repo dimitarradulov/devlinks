@@ -12,6 +12,7 @@ module.exports = {
         "secondary-85": "#D9D9D9",
         "secondary-98": "#FAFAFA",
         danger: "#FF3939",
+        "danger-75": "#FF8080",
       },
       fontSize: {
         "heading-m": [
