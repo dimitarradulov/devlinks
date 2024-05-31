@@ -41,3 +41,9 @@
 .wrapper {
   @apply max-w-full mx-auto px-4 sm:px-6
 }
+
+@media screen and (max-width: 640px) {
+  .heading {
+    font-size: 1.5rem;
+  }
+}
