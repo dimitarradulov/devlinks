@@ -1,4 +1,4 @@
-<div [ngClass]="{ 'wrapper p-6': !isMobileViewport() }">
+<div [ngClass]="isMobileViewport() ? 'mb-4' : 'wrapper my-6'">
   <header class="bg-white py-4 sm:rounded-lg">
     <div class="wrapper flex items-center justify-between">
       <!-- Show the small logo on small screens and the large logo on larger screens. -->
