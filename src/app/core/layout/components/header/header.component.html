@@ -1,0 +1,36 @@
+<div [ngClass]="{ 'wrapper p-6': !isMobileViewport() }">
+  <header class="bg-white py-4 sm:rounded-lg">
+    <div class="wrapper flex items-center justify-between">
+      <!-- Show the small logo on small screens and the large logo on larger screens. -->
+      <app-logo
+        [size]="isMobileViewport() ? 'small' : 'large'"
+        [ngClass]="{ 'w-36 h-9': !isMobileViewport() }"
+      />
+
+      <app-nav-container>
+        <app-tab
+          linkPath="/links/customize"
+          icon="links-header"
+          [label]="isMobileViewport() ? '' : 'Links'"
+        />
+        <app-tab
+          linkPath="/profile"
+          icon="profile-details-header"
+          [label]="isMobileViewport() ? '' : 'Profile Details'"
+        />
+      </app-nav-container>
+
+      <app-nav-container>
+        <li>
+          <a class="button-secondary cursor-pointer !px-4 sm:!px-7 !py-3">
+            @if (isMobileViewport()) {
+              <app-icon icon="preview-header" className="w-5 h-5" />
+            } @else {
+              Preview
+            }
+          </a>
+        </li>
+      </app-nav-container>
+    </div>
+  </header>
+</div>

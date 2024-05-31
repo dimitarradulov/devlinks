@@ -16,12 +16,15 @@ export const routes: Routes = [
   },
   {
     path: 'links',
-    loadComponent: () =>
-      import('./features/links/pages/links/links.component').then(
-        (a) => a.LinksComponent,
-      ),
     loadChildren: () =>
       import('./features/links/links.routes').then((m) => m.routes),
     ...canActivate(redirectUnauthorizedToLogin),
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./shared/components/not-found/not-found.component').then(
+        (m) => m.NotFoundComponent,
+      ),
   },
 ];

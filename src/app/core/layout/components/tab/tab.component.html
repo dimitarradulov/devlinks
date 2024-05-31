@@ -1,0 +1,26 @@
+<li class="has-[.active-link]:bg-primary-95 rounded-lg px-7 py-3">
+  <a
+    class="group"
+    [routerLink]="linkPath()"
+    routerLinkActive="active-link"
+    [routerLinkActiveOptions]="{ exact: true }"
+    #link
+  >
+    <app-icon
+      [icon]="icon()"
+      className="inline-block w-5 h-5 group-hover:[&>*:first-child]:fill-primary-60 {{
+        link.classList.contains('active-link')
+          ? '[&>*:first-child]:fill-primary-60'
+          : ''
+      }}"
+    />
+    @if (label(); as label) {
+      <span
+        class="ml-1 text-heading-s align-middle text-secondary-45 group-hover:text-primary-60 {{
+          link.classList.contains('active-link') ? '!text-primary-60' : ''
+        }}"
+        >{{ label }}</span
+      >
+    }
+  </a>
+</li>

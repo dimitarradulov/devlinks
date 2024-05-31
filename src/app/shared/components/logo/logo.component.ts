@@ -1,4 +1,4 @@
-import { NgClass, NgOptimizedImage } from '@angular/common';
+import { NgClass } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
@@ -9,14 +9,14 @@ import {
 @Component({
   selector: 'app-logo',
   standalone: true,
-  imports: [NgOptimizedImage, NgClass],
+  imports: [NgClass],
   template: `
     <img
-      ngSrc="../../../../assets/images/logo-devlinks-{{ size() }}.svg"
+      draggable="false"
+      src="../../../../assets/images/logo-devlinks-{{ size() }}.svg"
       alt="Logo"
       [width]="dimensions().width"
       [height]="dimensions().height"
-      [priority]="priority()"
       [ngClass]="className()"
     />
   `,

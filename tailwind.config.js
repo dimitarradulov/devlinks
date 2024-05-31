@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./src/**/*.{html,ts}"],
+  variants: {
+    extend: {
+      fill: ["group-hover"],
+    },
+  },
   theme: {
     extend: {
       colors: {

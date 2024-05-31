@@ -15,7 +15,7 @@ export function withNavigation() {
           const user = store.user();
 
           if (user) {
-            router.navigate(['links']);
+            router.navigate(['links', 'customize']);
           }
         });
       },

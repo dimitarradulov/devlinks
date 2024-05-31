@@ -23,7 +23,7 @@
 }
 
 .button-secondary {
-  @apply button bg-transparent border border-primary-60 text-primary-60 active:bg-primary-95;
+  @apply button bg-transparent border border-primary-60 text-primary-60 active:bg-primary-95 hover:bg-primary-95;
 }
 
 .box {

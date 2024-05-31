@@ -2,10 +2,10 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-not-found',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './header.component.html',
+  template: `<p>not-found works!</p>`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {}
+export class NotFoundComponent {}

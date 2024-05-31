@@ -2,20 +2,14 @@ import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { Component, input, signal } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Icon } from '../../models/icons.model';
+import { IconComponent } from '../icon/icon.component';
 
 @Component({
   selector: 'app-input',
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage],
   template: `
     <div class="relative">
-      <img
-        ngSrc="../../../../assets/images/icon-{{ icon() }}.svg"
-        alt="Icon"
-        class="absolute left-4 top-4"
-        width="16"
-        height="16"
-      />
+      <app-icon [icon]="icon()" className="absolute left-4 top-4" />
       <input
         class="border border-secondary-85 rounded-lg w-full py-3 pl-11 outline-none text-secondary-20 placeholder:text-body-m placeholder:text-secondary-20 placeholder:opacity-50 focus:border-primary-60 focus:shadow-active"
         [ngClass]="{ '!text-danger !border-danger pr-36': isError() }"
@@ -39,6 +33,7 @@ import { Icon } from '../../models/icons.model';
       multi: true,
     },
   ],
+  imports: [CommonModule, NgOptimizedImage, IconComponent],
 })
 export class InputComponent implements ControlValueAccessor {
   readonly type = input<string>('text');
