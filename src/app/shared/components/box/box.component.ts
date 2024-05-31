@@ -22,6 +22,6 @@ export class BoxComponent {
   readonly className = input<string>();
 
   protected readonly cssClasses = computed(() =>
-    twMerge('bg-white rounded-xl p-10', this.className()),
+    twMerge('bg-white rounded-xl p-6 sm:p-10', this.className()),
   );
 }
